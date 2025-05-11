@@ -11,7 +11,7 @@ import { LoggerService } from '../../services/logger.service';
 export class ConstructorComponent {
 
   constructor(private loggerService:LoggerService){
-    this.loggerService.logger("constructor component is initalized")
+    this.loggerService.log("constructor component is initalized")
   }
 
 }
