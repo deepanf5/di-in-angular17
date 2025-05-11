@@ -1,4 +1,5 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { App_config, AppConfigs } from './../inject-config/inject.token';
+import { Component, inject, OnInit } from '@angular/core';
 import { LoggerService } from '../../services/logger.service';
 
 @Component({
@@ -9,10 +10,14 @@ import { LoggerService } from '../../services/logger.service';
   styleUrl: './new-inject.component.css'
 })
 export class NewInjectComponent implements OnInit{
-  private logger = Inject(LoggerService)
+  private logger = inject(LoggerService)
 
-    ngOnInit(): void {
-      this.logger.console.log("new inject component is initalized");
-    }
+  // constructor(private logger:LoggerService){}
+  ngOnInit(): void {
+    this.logger.log("new injector component")
+    
+  }
+   
+
 
 }
